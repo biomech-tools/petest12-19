@@ -151,8 +151,8 @@ label {
 const i18n = {
   ja: {
     title: "GPS 活動量計算ツール",
-    langLabel: "言語 / Language",
-    tzLabel: "JST / UTC",
+    langLabel: "言語",
+    tzLabel: "JST/UTC",
     timeGenLabel: "時刻モデル",
     constSpeedLabel: "速度 (km/h)",
     fileLabel: "GPS ファイルを選択",
@@ -524,23 +524,26 @@ function showResult(res, stats) {
   const down = Math.round(stats.totalDown);
 
   document.getElementById("result").innerHTML = `
-    <div style="font-size:2.4em; font-weight:bold; color:#006400;">
+    <div style="font-size:1.6em; font-weight:bold; color:#000;">
       平均 METs: ${avgMETs.toFixed(1)}
     </div>
-    <div style="font-size:1.8em; font-weight:bold; color:#8B0000;">
+    <div style="font-size:1.6em; font-weight:bold; color:#000;">
       Max METs: ${maxMETs.toFixed(1)}
     </div>
-    <div style="font-size:1.8em; font-weight:bold; color:#00008B;">
+    <div style="font-size:1.6em; font-weight:bold; color:#000;">
       Ex (METs・時): ${totalEx.toFixed(2)}
     </div>
-    <div style="font-size:1.4em; font-weight:bold; color:#8B4513;">
+    <div style="font-size:1.0em; color:#000;">
       kcal: ${Math.round(totalKcal)}
     </div>
-    <div style="font-weight:bold; color:#000;">
+    <div style="font-size:1.0em; color:#000;">
       ${t.totalTime}: ${totalTimeStr}
     </div>
-    <div style="font-weight:bold; color:#000;">
-      ${t.totalDistance}: ${distKm} km (${t.ascentDescent}: ${up} m / ${down} m)
+    <div style="font-size:1.0em; color:#000;">
+      ${t.totalDistance}: ${distKm} km
+    </div>
+    <div style="font-size:1.0em; color:#000;">
+      ${t.ascentDescent}: ${up} m / ${down} m
     </div>
   `;
 }
